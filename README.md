@@ -35,3 +35,41 @@ A full-stack currency and cryptocurrency conversion platform built with ASP.NET 
 ## Conclusion
 
 This project demonstrates building a reliable, full-stack application with a focus on scheduled data processing, modern architecture, and automated DevOps workflows.
+
+## Automated tests
+
+The frontend uses the existing pnpm lockfile. Use Node.js 20 and pnpm 9:
+
+```sh
+cd krijji-client
+pnpm install --frozen-lockfile
+pnpm test
+pnpm typecheck
+pnpm build
+```
+
+`pnpm test:watch` runs Vitest interactively. The Testing Library/jsdom tests cover
+conversion inputs, currency search and selection, swaps, fiat/crypto precision,
+server-data prioritization and fetch failures, theme cookie persistence, and
+locale redirects. Next navigation/images and browser layout APIs are stubbed;
+no live currency API is required by the tests. The production build needs
+network access for the application's existing Google Fonts imports.
+
+The backend requires the .NET 9 SDK:
+
+```sh
+dotnet test krijji-server/Krijji/app/Krijji.sln
+dotnet build krijji-server/Krijji/app/Krijji.sln
+```
+
+The xUnit suite covers currency/domain validation, localized converter query
+mapping, the validation pipeline, controller dispatch and API error handling.
+It uses an isolated EF Core InMemory context for application query behavior and
+mocks unmanaged boundaries; it never starts Quartz jobs or connects to a real
+database or rate provider. PostgreSQL constraints, SQL translation, full HTTP
+hosting, live provider contracts, and browser layout are outside this suite.
+
+`.github/workflows/tests.yaml` runs both suites and frontend type checking/build.
+It has no publication or deployment steps; the existing deployment workflow is
+unchanged. The existing `pnpm lint` script has no ESLint configuration and opens
+the configuration prompt rather than completing a lint check.

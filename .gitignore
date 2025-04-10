@@ -102,3 +102,5 @@ yarn-error.log*
 
 **/.next
 **/images-server/images
+# TypeScript incremental check cache
+**/*.tsbuildinfo

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{61BFA79C-91C2-4343-8072-4306BC1081B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C0D988B7-E4F7-4AF6-A4D4-93BBC4EB1ED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{61BFA79C-91C2-4343-8072-4306BC1081B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61BFA79C-91C2-4343-8072-4306BC1081B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61BFA79C-91C2-4343-8072-4306BC1081B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D988B7-E4F7-4AF6-A4D4-93BBC4EB1ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D988B7-E4F7-4AF6-A4D4-93BBC4EB1ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D988B7-E4F7-4AF6-A4D4-93BBC4EB1ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D988B7-E4F7-4AF6-A4D4-93BBC4EB1ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
